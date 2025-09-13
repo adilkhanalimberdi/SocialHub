@@ -1,0 +1,36 @@
+# -------------------
+# Backend (Java / Spring)
+# -------------------
+/backend/target/
+/backend/.idea/
+/backend/.classpath
+/backend/.project
+/backend/.settings/
+/backend/.mvn/
+/backend/mvnw.cmd
+/backend/mvnw
+/backend/.env
+/backend/.gitattributes
+/backend/HELP.md
+/backend/*.iml
+
+# -------------------
+# Frontend (JS / HTML / CSS)
+# -------------------
+/frontend/node_modules/
+/frontend/.idea/
+/frontend/.env
+/frontend/dist/
+/frontend/build/
+
+# -------------------
+# Root
+# -------------------
+.idea
+
+# -------------------
+# OS / IDE files
+# -------------------
+.DS_Store
+Thumbs.db
+*.log

@@ -1,0 +1,22 @@
+spring:
+    application:
+        name: SocialHub
+    datasource:
+        url: jdbc:postgresql://localhost:5432/SocialHub
+        username: username
+        password: password
+    jpa:
+        show-sql: true
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+    port: 8080
+    address: 0.0.0.0
+    error:
+        include-message: always
+        include-stacktrace: always
+

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/account.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" referrerpolicy="no-referrer" />
+    <title>SocialHub</title>
+</head>
+<body>
+
+    <div id="container">
+
+        <h1 id="hello-message">Welcome</h1>
+
+        <h2>Profile Information: </h2>
+        <form id="edit-form">
+            <label for="name">Name: </label><input type="text" id="name" name="name" required>
+            <label for="surname">Surname: </label><input type="text" id="surname" name="surname" >
+            <div id="line">
+                <div class="age">
+                    <label for="age">Age: </label>
+                    <input type="text" id="age" name="age">
+                </div>
+                <div class="phone">
+                    <label for="phone">Phone: </label>
+                    <input type="text" id="phone" name="phone">
+                </div>
+            </div>
+            <label for="email">Email: </label><input type="email" id="email" name="email">
+            <button type="submit"><i class="fa-regular fa-floppy-disk"></i></button>
+
+        </form>
+
+        <div id="bar-container">
+            <button id="back"><i class="fa-solid fa-arrow-left"></i></button>
+            <h2 id="title">Chats:</h2>
+        </div>
+        <div id="chats"></div>
+        <div id="direct">
+
+            <div id="history"></div>
+            <div id="items">
+                <input id="message-input" type="text" placeholder="Enter...">
+                <button id="send" type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+
+        </div>
+
+        <div id="footer"></div>
+
+        <div id="effect"></div>
+
+        <div id="message-action-window">
+            <button id="action-window-back-button"><i class="fa-solid fa-xmark"></i></button>
+            <button id="action-window-delete-button">Delete message</button>
+            <button id="action-window-edit-button">Edit message</button>
+        </div>
+        
+        <div id="message-edit-window">
+            <button id="edit-window-back-button"><i class="fa-solid fa-xmark"></i></button>
+            <div id="edit-message-items">
+                <label for="edit-message">Edit message: </label>
+                <input id="edit-message" type="text" placeholder="Enter...">
+            </div>
+            <button id="save-edited-message-button" type="submit"><i class="fa-regular fa-floppy-disk"></i></button>
+        </div>
+
+    </div>
+
+    <script src="../js/user/account.js"></script>
+    <script src="../js/user/chat-history.js"></script>
+    <script src="../js/user/chats.js"></script>
+    <script src="../js/user/send-message.js"></script>
+    <script src="../js/user/config.js" ></script>
+    <script src="../js/user/message-action.js"></script>
+
+</body>
+</html>

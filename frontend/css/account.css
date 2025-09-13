@@ -1,0 +1,468 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Montserrat, sans-serif;
+}
+
+body {
+    background: #aaa;
+}
+
+h2 {
+    text-align: center;
+}
+
+#container {
+    width: 100%;
+    height: 100vh;
+
+    & #hello-message {
+        font-style: normal;
+        font-size: 30px;
+    }
+}
+
+#edit-form {
+    width: 50%;
+    height: 60%;
+    margin-left: 25%;
+
+    & input {
+        width: 100%;
+        height: 10%;
+        border: 1px solid black;
+        border-radius: 12px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 20px;
+    }
+
+    & label {
+        font-size: 20px;
+        opacity: 70%;
+    }
+
+    & #line {
+        width: 100%;
+        height: 10%;
+        position: relative;
+        margin-bottom: 4%;
+
+        & div {
+            position: absolute;
+            height: 100%;
+        }
+
+        & .age {
+            width: 6%;
+        }
+
+        & .phone {
+            width: 90%;
+            right: 0;
+        }
+
+        & input {
+            height: 100%;
+        }
+    }
+
+    & button {
+        width: 8%;
+        height: 8%;
+        border: 1px solid black;
+        border-radius: 12px;
+        background-color: #ddd;
+
+        & i {
+            font-size: 150%;
+        }
+
+        &:hover {
+            background-color: #bababa;
+            cursor: pointer;
+        }
+    }
+
+    & input {
+        margin-bottom: 3%;
+    }
+}
+
+#chats {
+    width: 50%;
+    margin-left: 25%;
+    height: 60%;
+    border-radius: 12px;
+    /*border: 1px solid #000;*/
+    background-color: grey;
+    overflow-y: scroll;
+
+    scrollbar-width: none; /* auto | thin | none */
+
+    & .chat {
+        width: 100%;
+        height: 10%;
+        border-radius: 12px;
+        background-color: #fff;
+
+        font-size: 20px;
+        text-align: left;
+
+        display: flex;
+        /*justify-content: center;*/
+        align-items: center;
+        box-sizing: border-box;
+        padding-left: 10px;
+
+        border: 1px solid #000;
+
+        margin-bottom: 5px;
+
+        & i {
+            font-size: 120%;
+            padding-right: 10px;
+        }
+
+        &:hover {
+            background-color: #ccc;
+            cursor: pointer;
+        }
+    }
+}
+
+#title {
+    /*margin-left: 25%;*/
+}
+
+#direct {
+    display: none;
+    flex-direction: column;
+    width: 50%;
+    height: 60%;
+    margin-left: 25%;
+    border-radius: 12px;
+    border: 1px solid #000;
+    background-color: grey;
+
+    & #items {
+        /*border: 1px solid red;*/
+        position: relative;
+        height: 10%;
+
+        & #message-input {
+            border-radius: 12px;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size: 20px;
+            border: 1px solid black;
+            position: absolute;
+            width: 92%;
+            height: 100%;
+            bottom: 0;
+            left: 0;
+            box-sizing: border-box;
+        }
+
+        & button {
+            /*font-size: 20px;*/
+            border-radius: 12px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border: 1px solid black;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 8%;
+            height: 100%;
+            background-color: #ddd;
+            box-sizing: border-box;
+
+            & i {
+                font-size: 120%;
+            }
+
+            &:hover {
+                background-color: #bababa;
+                cursor: pointer;
+            }
+        }
+
+        & #send {
+            background-color: #ddd;
+
+            &:hover {
+                background-color: #bababa;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+#history {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 90%;
+
+    scrollbar-width: none; /* auto | thin | none */
+
+    & .message-container {
+        box-sizing: border-box;
+        width: 100%;
+        height: max-content;
+        /*border: 1px solid blue;*/
+
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.sent, .received {
+    box-sizing: border-box;
+    white-space: normal; /* по умолчанию переносим текст */
+    word-wrap: break-word; /* перенос слов при необходимости */
+    word-break: break-word; /* поддержка для старых браузеров */
+
+    /*border: 1px solid red;*/
+
+    width: max-content;
+    max-width: 80%;
+    min-width: 5%;
+
+    position: relative;
+    padding: 15px 10px 25px;
+
+    /*background-color: red;*/
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+
+    border: 1px solid #000;
+}
+
+.sent {
+    margin-left: auto;
+    border-bottom-left-radius: 12px;
+    background-color: #a8c8d5;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    & .sent-time {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+.received {
+    margin-right: auto;
+    border-bottom-right-radius: 12px;
+    background-color: #cfb7aa;
+
+    & .received-time {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+.sent-time, .received-time {
+    /*display: none;*/
+    box-sizing: border-box;
+    font-size: 15px;
+    padding: 0;
+    /*border: 1px solid blue;*/
+    width: max-content;
+}
+
+#bar-container {
+    /*border: 1px solid blue;*/
+    box-sizing: border-box;
+    width: 50%;
+    margin-left: 25%;
+    display: flex;
+
+    & h2 {
+        /*position: absolute;*/
+        /*border: 1px solid red;*/
+        width: 100%;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        justify-content: center;
+    }
+
+    & #back {
+        /*height: 100%;*/
+        /*border: 1px solid red;*/
+        width: 9%;
+        height: 8%;
+        padding: 20px 0;
+        display: none;
+        border-radius: 12px;
+        border: 1px solid #000;
+        background-color: #ddd;
+        font-size: 16px;
+
+        & i {
+            font-size: 120%;
+        }
+
+        &:hover {
+            background-color: #bababa;
+            cursor: pointer;
+        }
+    }
+}
+
+#message-action-window, #message-edit-window {
+    display: none;
+    position: absolute;
+    box-sizing: border-box;
+
+    top: 80%;
+    left: 38%;
+
+    border-radius: 12px;
+}
+
+#message-action-window {
+    width: 20%;
+    height: 20%;
+
+    left: 40%;
+
+    background-color: #acacac;
+
+    & i {
+        font-size: 120%;
+    }
+
+    & button {
+        border-radius: 12px;
+        border: 1px solid #000;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    & #action-window-back-button {
+        width: 15%;
+        height: 20%;
+    }
+
+    & #action-window-edit-button {
+        position: absolute;
+
+        width: 40%;
+        height: 20%;
+
+        left: 30%;
+        top: 28%;
+    }
+
+    & #action-window-delete-button {
+        position: absolute;
+
+        width: 40%;
+        height: 20%;
+
+        left: 30%;
+        bottom: 28%;
+    }
+}
+
+#message-edit-window {
+    background-color: #acacac;
+
+    width: 24%;
+    height: 20%;
+
+    & i {
+        font-size: 120%;
+    }
+
+    & button, input {
+        border: 1px solid #000;
+    }
+
+    & #edit-message-items {
+        position: relative;
+
+        left: 10%;
+        top: 15%;
+
+        /*border: 1px solid red;*/
+
+        width: 80%;
+        height: 30%;
+
+        & label {
+            font-size: 120%;
+        }
+
+        & input {
+            position: absolute;
+            box-sizing: border-box;
+
+            padding-left: 10px;
+            padding-right: 10px;
+
+            font-size: 20px;
+
+            width: 100%;
+            height: 60%;
+
+            left: 0;
+            bottom: 0;
+
+            border-radius: 12px;
+        }
+    }
+
+    & #save-edited-message-button {
+        position: absolute;
+
+        width: 15%;
+        height: 20%;
+
+        right: 0;
+        top: 0;
+
+        border-radius: 12px;
+    }
+
+    & #edit-window-back-button {
+        width: 12%;
+        height: 20%;
+
+        border-radius: 12px;
+    }
+
+    & button:hover {
+        cursor: pointer;
+    }
+}
+
+#effect {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+    background-color: #000;
+    opacity: 0.4;
+
+    display: none;
+}
+
+#footer {
+    width: 100%;
+    height: 10vh;
+}
