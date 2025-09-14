@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
 
 @Entity
@@ -24,8 +25,8 @@ public class Message {
     @Column
     private String message;
 
-    @Column
-    private LocalDateTime sentAt = LocalDateTime.now();
+    @Column(name="sent_at", columnDefinition = "TIMESTAMP WITH TIME ZONE")
+    private Instant sentAt = Instant.now();
 
     @ManyToOne
     @JoinColumn(name = "chat_id", nullable = false)

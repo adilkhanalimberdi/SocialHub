@@ -3,8 +3,9 @@ async function welcomeUser() {
 
     fetch(`${API_URL}/id/${ID}`)
         .then(response => response.json())
-        .then(user => {
+        .then(async user => {
             element.textContent += `, ${user.name}!`;
+            await init();
         });
 }
 
@@ -29,6 +30,7 @@ document.getElementById("edit-form").addEventListener("submit", async event => {
         age: formData.get("age"),
         phone: formData.get("phone"),
         email: formData.get("email"),
+        updatedAt: new Date().toISOString(),
     };
 
     const res = await fetch(`${API_URL}/upd/${ID}`, {

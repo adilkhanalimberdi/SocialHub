@@ -10,7 +10,6 @@ let CURRENT_CHAT = null
 async function updateUser() {
     // USER.updatedAt = new Date();
 
-    // console.log(USER.name, `${new Date(USER.updatedAt).getHours()}:${new Date(USER.updatedAt).getMinutes()}`);
     fetch(`${API_URL}/upd/${ID}`, {
         method: "PUT",
         headers: {"Content-Type": "application/json"},
@@ -21,7 +20,7 @@ async function updateUser() {
             age: USER.age,
             email: USER.email,
             phone: USER.phone,
-            updatedAt: new Date(),
+            updatedAt: new Date().toISOString(),
         }),
     })
         .then(async response => {
@@ -29,6 +28,7 @@ async function updateUser() {
             await getUsers();
             // await loadUsers();
         })
+    console.log(USER.updatedAt);
 }
 
 function updateChat() {

@@ -8,9 +8,9 @@ function displayUsers(users) {
 
     users = users.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
 
-    // users.forEach((user) => {
-    //     console.log(user.name, `${new Date(user.updatedAt).getHours()}:${new Date(user.updatedAt).getMinutes()}`);
-    // })
+    users.forEach((user) => {
+        console.log(user.name, `${new Date(user.updatedAt).getHours().toString().padStart(2, '0')}:${new Date(user.updatedAt).getMinutes().toString().padStart(2, '0')}`);
+    })
 
     users.forEach(user => {
         const div = document.createElement("div");

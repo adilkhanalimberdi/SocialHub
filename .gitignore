@@ -13,6 +13,7 @@
 /backend/.gitattributes
 /backend/HELP.md
 /backend/*.iml
+/backend/src/test/
 /backend/src/main/resources/application.yaml
 
 # -------------------

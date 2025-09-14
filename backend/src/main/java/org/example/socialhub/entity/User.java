@@ -3,6 +3,7 @@ package org.example.socialhub.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
 
 @Entity
@@ -34,7 +35,7 @@ public class User {
     @Column(name="phone_number")
     private String phone;
 
-    @Column(name="updated_at")
-    private LocalDateTime updatedAt = LocalDateTime.now();
+    @Column(name="updated_at", columnDefinition = "TIMESTAMP WITH TIME ZONE")
+    private Instant updatedAt = Instant.now();
 
 }

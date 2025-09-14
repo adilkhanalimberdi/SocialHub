@@ -1,27 +1,5 @@
 const history_container = document.getElementById("history");
 
-function formatTime(date) {
-    let res = "";
-    let check = false;
-    let count = 0;
-
-    for (let index in date) {
-        if (date[index] === ":") {
-            count++;
-        }
-        if (count === 2) {
-            check = false;
-        }
-        if (check) res += date[index];
-        if (date[index] === "T") {
-            check = true;
-        }
-    }
-
-    // console.log(res);
-    return res;
-}
-
 function deleteMessage(message) {
     // console.log(message);
     fetch(`${MESSAGES_API_URL}/del/${message.id}`, {
@@ -65,7 +43,11 @@ async function displayHistory(chat) {
             time.classList.add("received-time");
         }
 
-        time.textContent = formatTime(message.sentAt);
+        const msgDate = new Date(message.sentAt);
+        const hours = msgDate.getHours().toString().padStart(2, "0");
+        const minutes = msgDate.getMinutes().toString().padStart(2, "0");
+
+        time.textContent = `${hours}:${minutes}`;
         content.textContent = text;
 
         content.appendChild(time);

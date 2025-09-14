@@ -76,11 +76,12 @@ saveEditedMessageButton.onclick = async () => {
         body: JSON.stringify({
             id: currentMessage.id,
             message: value.trim(),
-            sentAt: currentMessage.sentAt,
+            sentAt: new Date().toISOString(),
             chat: CURRENT_CHAT,
             sender: currentMessage.sender,
         })
     });
+    // console.log(new Date());
 
     if (res.ok) {
         // alert("Message updated.");
